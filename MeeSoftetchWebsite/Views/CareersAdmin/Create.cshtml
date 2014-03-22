@@ -1,0 +1,102 @@
+﻿@model MeeSoftetchWebsite.Models.Careers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Create a New Opening</h2>
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Careers</h4>
+                <hr />
+                @Html.ValidationSummary(true)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OpeningTitle, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.OpeningTitle, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.OpeningTitle)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ExperienceYear, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.ExperienceYear, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ExperienceYear)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ExperienceMonth, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.ExperienceMonth, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ExperienceMonth)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SkillsRequired, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.SkillsRequired, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SkillsRequired)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+
+                        @*@Html.(model => model.Description, new { @class = "form-control" })*@
+                       @* @Html.(model => model.Description, new { @class = "form-control" })*@
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsOpen, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*@Html.DropDownListFor(model => model.IsOpen, (IEnumerable<SelectListItem>)ViewBag.IsOpenList, new { @class = "form-control" })*@
+                        @Html.TextBoxFor(model => model.IsOpen, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.IsOpen)
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                    @Html.LabelFor(model => model.JobPostingDate, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.JobPostingDate)
+                        @Html.ValidationMessageFor(model => model.JobPostingDate)
+                    </div>
+                </div>*@
+
+                @*<div class="form-group">
+                    @Html.LabelFor(model => model.PostedByEmployee, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PostedByEmployee)
+                        @Html.ValidationMessageFor(model => model.PostedByEmployee)
+                    </div>
+                </div>*@
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</div>
+
+

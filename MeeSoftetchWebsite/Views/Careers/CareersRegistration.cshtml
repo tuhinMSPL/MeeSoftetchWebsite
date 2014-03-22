@@ -1,0 +1,113 @@
+﻿@model MeeSoftetchWebsite.Models.CareersRegistration
+
+@{
+    ViewBag.Title = "CareersRegistration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<img src="~/assets/BodyImgs/careers.jpg" class="img-responsive" />
+<br />
+<h2>Careers Registration</h2>
+@*ViewBag.GetPositionList*@
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Please fill the form.</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AppliedFor, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.AppliedFor, (IEnumerable<SelectListItem>)ViewBag.GetPositionList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AppliedFor)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+                
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Gender, (IEnumerable<SelectListItem>)ViewBag.GenderList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContactNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control" })
+               @* @Html.EditorFor(model => model.ContactNumber)*@
+                @Html.ValidationMessageFor(model => model.ContactNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailAddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EmailAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedHighestQualification, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.SelectedHighestQualification, (IEnumerable<SelectListItem>)ViewBag.QualificationsList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SelectedHighestQualification)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExperienceYear, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.ExperienceYear, (IEnumerable<SelectListItem>)ViewBag.YearList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ExperienceYear)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExperienceMonth, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.ExperienceMonth, (IEnumerable<SelectListItem>)ViewBag.MonthList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ExperienceMonth)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KeySkills, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.KeySkills, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.KeySkills)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ResumePlainText, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.ResumePlainText, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ResumePlainText)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Register" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

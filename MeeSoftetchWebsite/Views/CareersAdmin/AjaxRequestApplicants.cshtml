@@ -1,0 +1,50 @@
+﻿@using MeeSoftetchWebsite.Models;
+@{
+    ViewBag.Title = "AjaxRequestApplicants";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Search Applicants</h2>
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("AjaxRequestApplicants", "CareersAdmin", FormMethod.Post))
+        {
+            <div class="form-group">
+                <h4>Search</h4><h6>Search by Name/Key Skills/Skills on resume</h6>
+                <div class="col-md-10">
+                    @Html.TextBox("searchString", "", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn-success" value="Search" />
+            </div>
+        }
+        <div class="table-responsive">
+            <table id="myDataTable" class="table">
+                <tr>
+                    <td>Name</td>
+                    <td>Exp(Y)</td>
+                    <td>Exp(M)</td>
+                    <td>Skills</td>
+                    <td>Qualification</td>
+                    <td>Resume</td>
+                    <td>Contact No.</td>
+                    <td>Email</td>
+                </tr>
+                @foreach (var item in ViewBag.FilteredSearch)
+                {
+                    <tr>
+                            <td>@item.Name</td>
+                            <td>@item.ExperienceYear</td>
+                            <td>@item.ExperienceMonth</td>
+                            <td>@item.KeySkills</td>
+                            <td>@item.SelectedHighestQualification</td>
+                            <td>@item.ResumePlainText</td>
+                            <td>@item.ContactNumber</td>
+                            <td>@item.EmailAddress</td>
+                        </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

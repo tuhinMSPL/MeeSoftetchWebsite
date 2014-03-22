@@ -1,0 +1,93 @@
+﻿@model MeeSoftetchWebsite.Models.Careers
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>Careers</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.OpeningTitle)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.OpeningTitle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ExperienceYear)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ExperienceYear)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ExperienceMonth)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ExperienceMonth)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SkillsRequired)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SkillsRequired)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsOpen)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IsOpen)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.JobPostingDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.JobPostingDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PostedByEmployee)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PostedByEmployee)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Careers";
+}
+
+<img src="~/assets/BodyImgs/careers.jpg" class="img-responsive" />
+<br />
+
+<div class="bs-example">
+    <ul class="nav nav-pills" style="margin-bottom: 20px;">
+        <li class="active">
+            <a data-toggle="tab" href="#home">WHY MSPL?</a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#CurrentOpening">Current Openings</a>
+        </li>
+       
+        <li>
+            @Html.ActionLink("Regestration", "CareersRegistration", "Careers")
+        </li>
+    </ul>
+     
+    <hr />
+    <div id="myTabContent" class="tab-content">
+        <div id="home" class="tab-pane fade active in">
+
+            <div class="btn-group btn-group-justified">
+                <a class="btn btn-info" href="../Careers/whymspl">Why MSPL</a>
+                <a class="btn btn-info" href="../Careers/MotivestoJoin">Motives to Join</a>
+                <a class="btn btn-info" href="../Careers/AdmirationforVariety">Admiration for Variety </a>
+
+            </div>
+
+
+            <p style=" text-align:justify">
+                Working with Mee Softtech Private Limited( MSPL) is not a job. It’s a journey. An Experience. There’s so much to explore here-even about you- that every day is a new day. You want a challenge and enjoyable work environment. We want you to realize your potential. You want a challenging and enjoyable work environment. We want to be recognized for your work. We want you to fulfill your aspirations.
+                <br />
+                If you’d like an exciting, challenging and rewarding workplace with career advancement based on performance, explore opportunities at MSPL.
+                <br />
+                MSPL is place you’ll want to come back to each morning for the rest of your life, with a sense of achievement and smile of job satisfaction. Indeed, it is the smartest career move you could ever make, because MSPL careers are for life.
+
+
+            </p>
+
+            <p style=" text-align:justify;color:black">
+
+                <strong> We do not believe in stereotypes. We believe diversity is essential for building a wholesome work environment. But there are certain basic attributes we look for:<br /></strong>
+                <ul>
+                    <li>Integrity</li>
+
+                    <li>Intellectual</li>
+
+                    <li>Team Skills</li>
+
+                    <li>Ability to think strategically</li>
+
+                    <li>High energy</li>
+
+                    <li>Creativity</li>
+
+                    <li>Leadership</li>
+                </ul>
+            </p>
+        </div>
+        @***********************************************************************************************************************************************************************************@
+
+
+
+
+
+        <div id="CurrentOpening" class=" tab-pane fade">
+            <p style=" text-align:justify">
+                Current Openings
+            </p>
+        </div>
+
+        
+    
+    </div>
+</div>
