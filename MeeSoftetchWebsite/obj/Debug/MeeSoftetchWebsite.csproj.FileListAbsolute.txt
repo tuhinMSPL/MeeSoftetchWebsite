@@ -60,3 +60,4 @@ E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\bin\Mic
 E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Debug\MeeSoftetchWebsite.dll
 E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Debug\MeeSoftetchWebsite.pdb
+E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Debug\MeeSoftetchWebsite.Migrations.init.resources

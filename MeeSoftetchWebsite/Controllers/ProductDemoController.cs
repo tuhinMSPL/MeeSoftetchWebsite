@@ -49,7 +49,7 @@ namespace MeeSoftetchWebsite.Controllers
         }
 
         //TODO:Remove Authorize tag (ViewRequestDemo can only have access to regtered users)
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult ViewRequestedDemo()
         {
             var dbInstance = new ProductDemoDbContext();
@@ -66,7 +66,7 @@ namespace MeeSoftetchWebsite.Controllers
 
         //TODO:Remove Authorize tag (ViewRequestDemo can only have access to regtered users)
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult ViewRequestedDemo(string searchString)
         {
             var dbInstance = new ProductDemoDbContext();

@@ -1,0 +1,90 @@
+﻿@model MeeSoftetchWebsite.Models.ContactUs
+    @{
+    ViewBag.Title = "Contact";
+    }
+    @*<h2>@ViewBag.Title.</h2>*@
+    @*<h3>@ViewBag.Message</h3>*@
+    <img src="~/assets/BodyImgs/CONTACT001.jpg" class="img-responsive" />
+    <h4><strong>Contact Us </strong></h4>
+    <p style="text-align:justify;color:blue">
+
+        <hr />
+
+
+    </p>
+    <div class="col-md-6">
+       
+                    <address>
+                        <b> MEE SOFTTECH PVT.LTD.</b><br />
+                        3rd Floor,Block BE <br />
+                        Plot 1-207,Shantipally,<br />
+                        Behind Gitanjali Stadium<br />
+                        Kolkata- 700107. <br />
+                        <abbr title="Phone">P.</abbr>
+                        (033)400-35058
+                    </address>
+
+                    <address>
+                        <strong>Email:</strong><a href="mailto:info@meesofttech.in.com">info@meesofttech.in.com</a><br />
+
+                    </address>
+        </div>
+<div class=" col-md-6">
+     @using (Html.BeginForm()) { @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+       <address>You are vital to us, and so is your information. We promise you that all information delivered by you shall be treated with extreme confidentiality.</address> 
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContactNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ContactNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailAddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EmailAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountryName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CountryName, (IEnumerable<SelectListItem>)ViewBag.CountryList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CountryName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.RequirementComment, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.RequirementComment, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RequirementComment)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+
+
+    </div>
+
+}
+</div>
+

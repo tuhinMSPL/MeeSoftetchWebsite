@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome to MSPL Site Administration</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/sb-admin.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/index.js"></script>
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Welcome to Mee Web Admin</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active"><a href="/Admin/Index"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-briefcase"></i> Careers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/CareersAdmin/Create">Create a New Opening</a></li>
+                            <li><a href="/CareersAdmin/Index">View all Openings</a></li>
+                            <li><a href="/CareersAdmin/Applicants">View all Applicants</a></li>
+                            <li><a href="/CareersAdmin/AjaxRequestApplicants">Search Applicants</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-github-alt"></i> News <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Create News Item</a></li>
+                            <li><a href="#">View all News Items</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o "></i> Charts<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Page View Statistics</a></li>
+                            <li><a href="#">View all News Items</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o "></i> Demo Requests<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ProductDemo/ViewRequestedDemo">View Demo Requests</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-inverse"></i> Errors</a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right navbar-user"></ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+            @RenderBody()
+        </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

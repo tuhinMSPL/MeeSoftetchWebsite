@@ -200,6 +200,10 @@
     <Compile Include="Migrations\201403171805150_AppliedFor1.Designer.cs">
       <DependentUpon>201403171805150_AppliedFor1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403240600420_init.cs" />
+    <Compile Include="Migrations\201403240600420_init.Designer.cs">
+      <DependentUpon>201403240600420_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Careers.cs" />
@@ -338,6 +342,11 @@
     <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\News\Edit.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\UserRoles.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectRoleEditorViewModel.cshtml" />
+    <Content Include="Views\Account\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -371,6 +380,9 @@
     <EmbeddedResource Include="Migrations\201403171805150_AppliedFor1.resx">
       <DependentUpon>201403171805150_AppliedFor1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403240600420_init.resx">
+      <DependentUpon>201403240600420_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -389,7 +401,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1844</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

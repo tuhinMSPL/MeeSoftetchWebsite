@@ -10,17 +10,19 @@ using MeeSoftetchWebsite.Models;
 
 namespace MeeSoftetchWebsite.Controllers
 {
-    [Authorize]
     public class NewsController : Controller
     {
         private NewsDbContext db = new NewsDbContext();
 
+
+        [Authorize(Roles = "Admin")]
         // GET: /News/
         public ActionResult Index()
         {
             return View(db.NewsDb.ToList());
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: /News/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,6 +38,7 @@ namespace MeeSoftetchWebsite.Controllers
             return View(news);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: /News/Create
         public ActionResult Create()
         {
@@ -46,6 +49,7 @@ namespace MeeSoftetchWebsite.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Create( News news)
         {
@@ -61,7 +65,9 @@ namespace MeeSoftetchWebsite.Controllers
             return View(news);
         }
 
+        
         // GET: /News/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +85,7 @@ namespace MeeSoftetchWebsite.Controllers
         // POST: /News/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit( News news)
@@ -94,7 +101,9 @@ namespace MeeSoftetchWebsite.Controllers
             return View(news);
         }
 
+        
         // GET: /News/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,6 +119,7 @@ namespace MeeSoftetchWebsite.Controllers
         }
 
         // POST: /News/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

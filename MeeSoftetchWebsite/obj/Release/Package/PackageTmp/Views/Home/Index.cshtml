@@ -1,0 +1,93 @@
+﻿@using MeeSoftetchWebsite.Models;
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div id="banner-slide" class="row">
+    <!-- start Basic Jquery Slider -->
+    <ul class="bjqs">
+        <li><img src="~/assets/Slider/slider1.jpg" /></li>
+        <li><img src="~/assets/possibilities.jpg" /></li>
+        <li><img src="~/assets/insight.jpg" /></li>
+        <li><img src="~/assets/slider004.jpg" /></li>
+    </ul>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('#banner-slide').bjqs({
+                'height': 450,
+                'width': 1170,
+                'responsive': true
+            });
+        });
+    </script>
+</div>
+<div class="col-md-12">
+    <center>
+        <h2>We are MEE Softtech</h2>
+    </center>
+    <hr />
+</div>
+<div class="row">
+    @* <div class="col-md-4" style="background-color:lightgrey ">*@
+    <div class="col-lg-4">
+
+        <div class="well-lg">
+            <br />
+            <center>
+                <img src="~/assets/BodyImgs/ERPIcon.png" />
+                <h4>ERP Solutions</h4>
+            </center>
+
+            <hr />
+            <p style="text-align:justify">
+                Mee Softtech is set to support organizations take advantage of the moving economic flow with the new issue of its next-generation Enterprise Resource Planning (ERP) group. Mee Softtech supple and accessible ERP software deals tough experiences motivated on tumbling outlays, reformation manners, and successful consumer sensitivity diagonally the originality—wholly top priorities toward achieving continuous progress and productivity. Discover the varied range of Mee Softtech powerful Enterprise Resource Planning solutions.
+            </p>
+
+            <p> <a class="btn btn-success" href="Home/ErpDetails">Learn more &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="col-lg-4 ">
+        <div class="well-lg">
+            @*style="background-color: darkgrey">*@
+            <br />
+            <center>
+                <img src="~/assets/BodyImgs/WEBIcon.png" />
+                <h4>Web Apps Development</h4>
+            </center>
+
+            <hr />
+            <p style="text-align:justify">
+                Web App development starts by firstly ensuring we fully understand the requirements of the new system at MEE Softtech. Once we have a full understanding of the requirements and how the system will be used, our technical design team will architecturally map out the system using a series of wireframes. The purpose of the wireframes is to demonstrate the workflow of the application and highlight the key navigation for different user roles. MEE Softtech provides web app development with cutting edge technology and resource that ensures reliability, robustness and scalability.
+            </p>
+            <p><a class="btn btn-info" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="well-lg">
+            <br />
+            <center><img src="~/assets/BodyImgs/ITIcon.png" /><h4>IT Infrastructure Management </h4></center>
+            <hr />
+            <p style="text-align:justify">
+                Mee Softtech is set to support organizations take advantage of the moving economic flow with the new issue of its next-generation Enterprise Resource Planning (ERP) group. Mee Softtech supple and accessible ERP software deals tough experiences motivated on tumbling outlays, reformation manners, and successful consumer sensitivity diagonally the originality—wholly top priorities toward achieving continuous progress and productivity. Discover the varied range of Mee Softtech powerful Enterprise Resource Planning solutions.
+            </p>
+            <p><a class="btn btn-danger" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    @foreach (var item in ViewBag.TopTwoNews)
+    {
+        <div class="col-lg-6">
+            <div class="bs-component">
+                <blockquote>
+                <p>@item.NewsHeader</p>
+                    <small>@item.NewsString</small>
+                </blockquote>
+            </div>
+         </div>
+    }
+</div>

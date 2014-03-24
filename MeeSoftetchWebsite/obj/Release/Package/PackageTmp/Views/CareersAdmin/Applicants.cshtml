@@ -1,0 +1,48 @@
+﻿@model MeeSoftetchWebsite.Models.CareersRegistration
+
+@{
+    ViewBag.Title = "Applicants";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <td>Name</td>
+                    <td>Exp(Y)</td>
+                    <td>Exp(M)</td>
+                    <td>Skills</td>
+                    <td>Qualification</td>
+                    <td>Resume</td>
+                    <td>Contact No.</td>
+                    <td>Email</td>
+                </tr>
+                @foreach (var applicant in ViewBag.ApplicantList)
+                {
+                    var i=0;
+                    foreach (var item in applicant)
+                    {
+                        if(i==0)
+                        {
+                            <tr><td>Opening:@item.AppliedFor</td> </tr>
+                        }
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.ExperienceYear</td>
+                            <td>@item.ExperienceMonth</td>
+                            <td>@item.KeySkills</td>
+                            <td>@item.SelectedHighestQualification</td>
+                            <td>@item.ResumePlainText</td>
+                            <td>@item.ContactNumber</td>
+                            <td>@item.EmailAddress</td>
+                        </tr>
+                        i++;
+                    }
+                }
+            </table>
+        </div>
+    </div> 
+</div>
+

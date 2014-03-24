@@ -1,0 +1,55 @@
+﻿@using MeeSoftetchWebsite.Models;
+@{
+    ViewBag.Title = "ViewRequestedDemo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>View Requested Demo</h2>
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("ViewRequestedDemo", "ProductDemo", FormMethod.Post))
+        {
+            <div class="form-group">
+                <h4>Search</h4><h6>Search by Name/Email/State</h6>
+                <div class="col-md-10">
+                    @Html.TextBox("searchString", "", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn-success" value="Search" />
+            </div>
+        }
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <td>Name</td>
+                        <td>Designation</td>
+                        <td>Company</td>
+                        <td>Country</td>
+                        <td>State</td>
+                        <td>Contact Number</td>
+                        <td>Email</td>
+                        <td>Request Date</td>
+                    </tr>
+                    @foreach (var demorequest in ViewBag.ViewAllData)
+                    {
+
+                        <tr>
+                            <td>@demorequest.Name</td>
+                            <td>@demorequest.Designation</td>
+                            <td>@demorequest.CompanyName</td>
+                            <td>@demorequest.CountryName</td>
+                            <td>@demorequest.State</td>
+                            <td>@demorequest.ContactNumber</td>
+                            <td>@demorequest.EmailAddress</td>
+                            <td>@demorequest.SubmitDate</td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+

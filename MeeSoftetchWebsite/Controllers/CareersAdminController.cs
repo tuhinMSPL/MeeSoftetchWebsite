@@ -15,13 +15,16 @@ namespace MeeSoftetchWebsite.Controllers
     {
         private CareersDbContext db = new CareersDbContext();
 
-        // GET: /CareersAdmin/
+        
+         // GET: /CareersAdmin/
+         [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.CareersDb.ToList());
         }
 
         // GET: /CareersAdmin/Details/5
+         [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +40,7 @@ namespace MeeSoftetchWebsite.Controllers
         }
 
         // GET: /CareersAdmin/Create
+         [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var careers = new Careers();
@@ -45,6 +49,7 @@ namespace MeeSoftetchWebsite.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Careers careers)
         {
@@ -71,6 +76,7 @@ namespace MeeSoftetchWebsite.Controllers
         }
 
         // GET: /CareersAdmin/Edit/5
+         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -86,6 +92,7 @@ namespace MeeSoftetchWebsite.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Careers careers)
         {
@@ -99,6 +106,7 @@ namespace MeeSoftetchWebsite.Controllers
         }
 
         // GET: /CareersAdmin/Delete/5
+         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,6 +122,7 @@ namespace MeeSoftetchWebsite.Controllers
         }
 
         // POST: /CareersAdmin/Delete/5
+         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -124,6 +133,7 @@ namespace MeeSoftetchWebsite.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Applicants()
         {
             var dbInstance = new MeeSoftetchWebsite.Models.CareersRegistration.CareersRegistrationDbContext();
@@ -135,6 +145,7 @@ namespace MeeSoftetchWebsite.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult AjaxRequestApplicants()
         {
             var dbInstance = new MeeSoftetchWebsite.Models.CareersRegistration.CareersRegistrationDbContext();
@@ -145,6 +156,7 @@ namespace MeeSoftetchWebsite.Controllers
                return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult AjaxRequestApplicants(string searchString)
         {
@@ -161,37 +173,6 @@ namespace MeeSoftetchWebsite.Controllers
             ViewBag.FilteredSearch = filterApplicants;
             return View();
         }
-
-        //public ActionResult AjaxRequest( param)
-        //{
-        //    var dbInstance = new MeeSoftetchWebsite.Models.CareersRegistration.CareersRegistrationDbContext();
-
-        //    var selectApplicants = from n in dbInstance.careersDb
-        //                           select n;
-
-        //    var filterApplicants = from n in selectApplicants
-        //                           where n.KeySkills.Contains(param.sSearch) ||
-        //                           n.ResumePlainText.Contains(param.sSearch) ||
-        //                           n.SelectedHighestQualification.Contains(param.sSearch) ||
-        //                           n.AppliedFor.Contains(param.sSearch)
-        //                           select n;
-        //    CareersRegistration[] ArrayCarrersResult = new CareersRegistration[filterApplicants.Count()];
-
-        //    int i = 0;
-        //    foreach (var item in filterApplicants)
-        //    {
-        //        ArrayCarrersResult[i] = item;
-        //    }
-
-        //    return Json(new
-        //    {
-        //        sEcho = param.sEcho,
-        //        iTotalRecords = ArrayCarrersResult.Count(),
-        //        iTotalDisplayRecords = ArrayCarrersResult.Count(),
-        //        aaData = ArrayCarrersResult
-        //    },
-        //                JsonRequestBehavior.AllowGet);
-        //}
 
         protected override void Dispose(bool disposing)
         {

@@ -1,0 +1,25 @@
+﻿@model MeeSoftetchWebsite.Models.EditUserViewModel
+@{
+    ViewBag.Title = "Delete User";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Are you sure you to delete this user?</h2>
+        <hr />
+        <h4>Username:</h4> @Html.DisplayFor(model => model.UserName)
+        <h4>Name:</h4> @Html.DisplayFor(model => model.Name)
+        <h4>Email:</h4> @Html.DisplayFor(model => model.EmailAddress)
+        @using (Html.BeginForm())
+        {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" class="btn, btn-danger" value="Delete" />
+            }
+
+            @Html.ActionLink("Cancel delete", "Index")
+        </div>
+    </div>
+</div>
+
