@@ -59,3 +59,5 @@ E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Rel
 E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Release\MeeSoftetchWebsite.csproj.GenerateResource.Cache
 E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Release\MeeSoftetchWebsite.dll
 E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Release\MeeSoftetchWebsite.pdb
+E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Release\MeeSoftetchWebsite.csprojResolveAssemblyReference.cache
+E:\MEE_WEBSITE\backup_\updated mee\MeeSoftetchWebsite\MeeSoftetchWebsite\obj\Release\MeeSoftetchWebsite.Migrations.init.resources
